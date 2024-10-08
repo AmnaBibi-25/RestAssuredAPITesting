@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Restful Booker Test Suite" thread-count="3" parallel="tests">
+    <test name="Restful Booker Tests">
+        <classes>
+            <class name="restfulBooker.tests.GetBookingTest"/>
+            <class name="restfulBooker.tests.UpdateBookingTest"/>
+            <class name="restfulBooker.tests.PartialUpdateBookingTest"/>
+            <class name="restfulBooker.tests.DeleteBookingTest"/>
+        </classes>
+    </test>
+</suite>
