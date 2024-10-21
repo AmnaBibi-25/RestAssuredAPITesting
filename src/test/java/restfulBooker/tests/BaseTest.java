@@ -1,5 +1,8 @@
 package restfulBooker.tests;
 
+import com.restassured.config.EnvironmentConfig;
+import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -17,13 +20,20 @@ import static restfulBooker.data.TestDataBuilder.getBookingData;
 
 public class BaseTest {
 
+    static {
+        RestAssured.filters(new AllureRestAssured());
+    }
     protected static RequestSpecification requestSpec() {
         RequestSpecBuilder requestBuilder = new RequestSpecBuilder();
+        String env = System.getProperty("env", "staging");
+        EnvironmentConfig.loadEnvironment(env);
+        String baseUrl = EnvironmentConfig.get("base.url");
+
         return requestBuilder.addHeader("Content-Type", "application/json")
                 .addHeader("Accept", "application/json")
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
-                .setBaseUri("https://restful-booker.herokuapp.com")
+                .setBaseUri(baseUrl)
                 .build();
     }
 

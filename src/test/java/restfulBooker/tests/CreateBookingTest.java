@@ -1,5 +1,7 @@
 package restfulBooker.tests;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.Test;
 import restfulBooker.data.BookingData;
 
@@ -15,6 +17,8 @@ public class CreateBookingTest {
     BookingData bookingData = getBookingData();
 
     @Test
+    @Feature("Booking")
+    @Story("Create Booking")
     public void testCreateBooking() {
         given()
                 .spec(requestSpec())
