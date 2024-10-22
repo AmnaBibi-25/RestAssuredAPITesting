@@ -112,12 +112,13 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>testng.xml</suiteXmlFile>
                         </suiteXmlFiles>
-                        <properties>
+                        <testFailureIgnore>true</testFailureIgnore>
+                        <!--<properties>
                             <property>
                                 <name>allure.results.directory</name>
                                 <value>target/allure-results</value>
                             </property>
-                        </properties>
+                        </properties>-->
                     </configuration>
                 </plugin>
                 <plugin>

@@ -4,9 +4,9 @@
     <test name="Restful Booker Tests">
         <classes>
             <class name="restfulBooker.tests.GetBookingTest"/>
-            <!--<class name="restfulBooker.tests.UpdateBookingTest"/>
+            <class name="restfulBooker.tests.UpdateBookingTest"/>
             <class name="restfulBooker.tests.PartialUpdateBookingTest"/>
-            <class name="restfulBooker.tests.DeleteBookingTest"/>-->
+            <class name="restfulBooker.tests.DeleteBookingTest"/>
         </classes>
     </test>
 </suite>
